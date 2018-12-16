@@ -5,8 +5,8 @@ class Cleaner(object):
     @staticmethod
     def clean(string):
         if string != '#':
-            result = "_".join(string.split())
-            result = re.sub("[^A-za-z0-9]", "", result)
+            result = re.sub("[^A-za-z0-9 ]", "", string)
+            result = "_".join(result.split())
             match = re.search("^([0-9]+)(.*)", result)
             if match:
                 result = "_" + result
