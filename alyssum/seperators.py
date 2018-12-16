@@ -6,13 +6,13 @@ class Title(object):
     this class contains a helper function which you can configure every single instance differently
     """
 
-    def __init__(self, label='', length=80, color='blue', design='#'):
-        self.configure(label, length, color)
+    def __init__(self, label='', length=80, color='blue', design_char='#'):
+        self.configure(label, length, color, design_char)
 
-    def configure(self, label=None, length=None, color=None, design=None):
+    def configure(self, label=None, length=None, color=None, design_char=None):
         if length is not None:
-            if length <= 2 or length >= 80:
-                raise Exception("Length must greater than 2 and smaller than 80")
+            if length < 0 or length > 80:
+                raise Exception("Length must greater than 0 and smaller than 80")
             self.length = length
         if label is not None:
             if len(label) > self.length-2:
@@ -23,7 +23,7 @@ class Title(object):
                 raise Exception("color can be 'grey', 'red', 'green', 'yellow', 'blue', 'magenta', 'cyan' or 'white'")
             self.color = color
         if design_char is not None:
-            if len(design_char) =! 1:
+            if len(design_char) != 1:
                 raise Exception("Design char length must be 1")
             self.design_char = design_char
         return self
@@ -60,10 +60,10 @@ class Title(object):
                 rigth_space = left_space+1
             else:
                 rigth_space = left_space
-        print(colored(self.length*"#", self.color))
-        print(colored("#", self.color), end='')
+        print(colored(self.length*self.design_char, self.color))
+        print(colored(self.design_char, self.color), end='')
         print((int(left_space)-1)*" ", end='')
-        print(colored(label.upper(), self.color), end='')
+        print(colored(self.label.upper(), self.color), end='')
         print((int(rigth_space)-1)*" ", end='')
-        print(colored("#", self.color))
-        print(colored(length*"#", self.color))
+        print(colored(self.design_char, self.color))
+        print(colored(self.length*self.design_char, self.color))
