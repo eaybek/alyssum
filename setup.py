@@ -1,11 +1,11 @@
 import setuptools
-
+import configure
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
     name="alyssum",
-    version="0.0.12",
+    version=configure.get_version_and_set_next(),
     author="Erdem Aybek",
     author_email="eaybek@gmail.com",
     description="A small helper package for personal needs",
