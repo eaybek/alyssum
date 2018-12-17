@@ -40,5 +40,14 @@ def hello():
 @run_only(2)
 def hello():
     print("hello")
+
+@run_once_message("It's come to end")
+...
+
+@run_only(3,"It's come to end"):
+...
+
+@run_only() 
+...
 ```
 

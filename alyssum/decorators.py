@@ -1,4 +1,4 @@
-def run_only(time, message=None):
+def run_only(time=1, message=None):
     def decorator(func):
         def wrapper(*args, **kwargs):
             if wrapper.count != time:
