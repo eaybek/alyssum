@@ -9,7 +9,7 @@ def get_settings():
 
 def set_settings(data):
     with open("alyssum/settings.py", "w") as f:
-        f.write("SETTINGS = " + pprint.pformat(str(data)))
+        f.write("SETTINGS = " + pprint.pformat(data))
 
 
 def get_version_and_set_next():

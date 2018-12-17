@@ -1,1 +1,1 @@
-SETTINGS = "{'version': '0.0.12'}"
+SETTINGS = {'version': '0.0.13'}
