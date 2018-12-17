@@ -12,9 +12,11 @@ def run_only(time, message=None):
     return decorator
 
 
+run_once = run_only(1)
+
+
 def run_once_message(message=None):
     def decorator(func):
         return run_only(1, message)(func)
     return decorator
 
-run_once = run_once_message(None)
