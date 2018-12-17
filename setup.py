@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="alyssum",
-    version="0.0.9",
+    version="0.0.10",
     author="Erdem Aybek",
     author_email="eaybek@gmail.com",
     description="A small helper package for personal needs",
