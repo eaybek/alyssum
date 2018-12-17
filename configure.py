@@ -1,15 +1,15 @@
 import json
+import pprint
+from alyssum.settings import SETTINGS
 
 
 def get_settings():
-    with open("alyssum/settings.json", "rb") as f:
-        data = json.load(f)
-    return data
+    return SETTINGS
 
 
 def set_settings(data):
-    with open("alyssum/settings.json", "w") as f:
-        f.write(json.dumps(data, sort_keys=True, indent=4, ensure_ascii=False))
+    with open("alyssum/settings.py", "w") as f:
+        f.write("SETTINGS = " + pprint.pformat(str(data)))
 
 
 def get_version_and_set_next():
