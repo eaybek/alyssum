@@ -16,7 +16,5 @@ run_once = run_only(1)
 
 
 def run_once_message(message=None):
-    def decorator(func):
-        return run_only(1, message)(func)
-    return decorator
+    return run_only(1, message)
 
