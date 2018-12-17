@@ -27,3 +27,18 @@ length must be greater than 1 and smaller than 81
 from alyssum.cleaners import Cleaner
 Cleaner.clean("Hello World!")
 ```
+
+## Decorators
+
+```python
+from alyssum.decorators import run_once, run_only
+
+@run_once
+def hello():
+    print("hello")
+
+@run_only(2)
+def hello():
+    print("hello")
+```
+
